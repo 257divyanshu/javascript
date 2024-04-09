@@ -358,3 +358,161 @@
 // -----
 // LOOPS
 // -----
+
+// FOR EACH LOOP
+const chars = ['a','b','c','d','e','f'];
+chars.forEach(function(value,index,array)
+{
+    console.log("value is ",value);
+})
+
+// FOR OF LOOP ON ARRAYS
+// const arr = [1,2,3,4,5];
+// for(let a of arr)
+// {
+//     console.log(a);
+// };
+
+// FOR OF ON OBJECTS
+// doesn't work
+// const obj = {
+//     name:"chinu",
+//     hobby:"sleeping",
+// };
+// for(let a of obj)
+// {
+//     console.log(a);
+// }
+
+// FOR IN ON OBJECTS
+// const obj = {
+//     name:"chinu",
+//     hobby:"sleeping",
+// };
+// for(let key in obj)
+// {
+//     console.log(`${key} is ${obj[key]}`);
+// };
+
+// FOR IN ON ARRAYS
+// const arr = ['a','b','c','d'];
+// for(let a in arr)
+// {
+//     console.log(a);
+//     console.log(arr[a]);
+// };
+// in case of arrays keys are indices
+// in case of arrays values are elements of the array
+
+// ----
+// MAPS
+// ----
+// A Map holds key-value pairs where the keys can be any datatype.
+// A Map remembers the original insertion order of the keys.
+
+// WAYS TO CREATE A MAP
+// by passing an array to the new Map() method
+// creating an map and then using the Map.set() method
+
+// THE NEW MAP METHOD for creating a map and the SET() method for adding key-value pairs to a map
+// the set method can also be used to override an existing key's value
+// const fruits = new Map([
+//     ["applies",500],
+//     ["oranges",1000],
+//     ["bananas",1500],
+// ]);
+// const fruits = new Map();
+// fruits.set("applies",500);
+// fruits.set("oranges",1000);
+// fruits.set("bananas",1500);
+// fruits.set("apples",800);
+// console.log(fruits);
+
+// GET() METHOD
+// const fruits = new Map();
+// fruits.set("apples",500);
+// fruits.set("oranges",1000);
+// fruits.set("bananas",1500);
+// console.log(fruits.get("apples"));
+
+// SIZE() PROPERTY
+// const fruits = new Map();
+// fruits.set("apples",500);
+// fruits.set("oranges",1000);
+// fruits.set("bananas",1500);
+// console.log(fruits.size);
+
+// DELETE() METHOD
+// const fruits = new Map();
+// fruits.set("apples",500);
+// fruits.set("oranges",1000);
+// fruits.set("bananas",1500);
+// console.log(fruits);
+// fruits.delete("apples");
+// console.log(fruits);
+
+// HAS() METHOD
+// const fruits = new Map();
+// fruits.set("apples",500);
+// fruits.set("oranges",1000);
+// fruits.set("bananas",1500);
+// console.log(fruits.has("apples"));
+
+// FOREACH() METHOD ON MAPS
+// const fruits = new Map();
+// fruits.set("apples",500);
+// fruits.set("oranges",1000);
+// fruits.set("bananas",1500);
+// fruits.forEach(function(value,key){ // value first and then key
+//     console.log("number of",key,"is",value);
+// });
+
+// ENTRIES() METHOD
+// returns the iterator object with the [key,value] in a map
+// const fruits = new Map();
+// fruits.set("apples",500);
+// fruits.set("oranges",1000);
+// fruits.set("bananas",1500);
+// for(const x of fruits.entries())
+// {
+//     console.log(x);
+// }
+
+// DIFFERENCES BETWEEN MAP AND OBJECTS
+// Object is directly iterable while map is not
+// Objects do not have a size property but maps do have
+// Objects' keys must be string while maps' keys can be of any datatype
+// Objects' keys are not well ordered while maps' keys are well ordered
+// Objects' do not have default keys but maps do have
+
+// USING FOR OF ON MAPS
+// const fruits = new Map();
+// fruits.set("apples",500);
+// fruits.set("oranges",1000);
+// fruits.set("bananas",1500);
+// for(const entry of fruits)
+// {
+//     console.log(entry);
+// };
+
+// USING FOR OF ON MAPS BUT WITH SOME TWIST
+// const fruits = new Map();
+// fruits.set("apples",500);
+// fruits.set("oranges",1000);
+// fruits.set("bananas",1500);
+// for(let [key,val] of fruits)
+// {
+//     console.log(key);
+//     console.log(val);
+// }
+
+const fruits = new Map();
+fruits.set("apples",500);
+fruits.set("oranges",1000);
+fruits.set("bananas",1500);
+for(let a in fruits)
+{
+    console.log("Hi");
+    console.log(a);
+};
+// maps are not iterable using the for in loop but they are iterable using the foreach loop
