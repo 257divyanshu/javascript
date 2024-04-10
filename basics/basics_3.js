@@ -360,11 +360,11 @@
 // -----
 
 // FOR EACH LOOP
-const chars = ['a','b','c','d','e','f'];
-chars.forEach(function(value,index,array)
-{
-    console.log("value is ",value);
-})
+// const chars = ['a','b','c','d','e','f'];
+// chars.forEach(function(value,index,array)
+// {
+//     console.log("value is ",value);
+// })
 
 // FOR OF LOOP ON ARRAYS
 // const arr = [1,2,3,4,5];
@@ -506,13 +506,60 @@ chars.forEach(function(value,index,array)
 //     console.log(val);
 // }
 
-const fruits = new Map();
-fruits.set("apples",500);
-fruits.set("oranges",1000);
-fruits.set("bananas",1500);
-for(let a in fruits)
-{
-    console.log("Hi");
-    console.log(a);
-};
+// FOR IN LOOPS ON MAPS
+// const fruits = new Map();
+// fruits.set("apples",500);
+// fruits.set("oranges",1000);
+// fruits.set("bananas",1500);
+// for(let a in fruits)
+// {
+//     console.log("Hi");
+//     console.log(a);
+// };
 // maps are not iterable using the for in loop but they are iterable using the foreach loop
+
+// SUMMARY OF WHICH LOOPS WORKS ON WHICH OBJECTS
+// forEach works on arrays, for of works on arrays, for in works on arrays
+// forEach works on sets, for of works on sets, for in does't work on sets
+// for of works on maps, for in doesn't work on maps
+// for in works on objects, for of doesn't work on objects
+
+// ----------------------
+// HIGHER ORDER FUNCTIONS
+// ----------------------
+
+// forEach() function is a higher order function because it takes another function as an argument
+
+// ----------------
+// FOREACH() METHOD
+// ----------------
+
+// const arr = ['a','b','c','d','e'];
+// const val = arr.forEach(function(elem){
+//     console.log(elem);
+// });
+// console.log(val); 
+// forEeach() doesn't return anything
+
+// -----------------
+// MAP FILTER REDUCE
+// -----------------
+
+// FILTER
+// const arr = ['a','b','c','d','e'];
+// const filteredArr = arr.filter(elem => elem>'c');
+// console.log(filteredArr);
+// we can mimic it using forEach() method
+
+// MAP 
+
+// REDUCE
+// const arr = [1,2,3,4,5];
+// let init = 10;
+// // const sum = arr.reduce((acc,curr)=>acc+=curr,init)
+// const sum = arr.reduce(function(acc,curr){
+//     return acc+=curr
+// },init);
+// console.log(sum);
+
+// we can chain map fiter and reduce

@@ -164,16 +164,76 @@
 // OBJECTS
 // -------
 
-// USING LITERALS
-// const user1 = {
+// EVERYTHING IS AN OBJECT IN JAVASCRIPT
+// - Numbers can be objects if defined with the new keyword
+// - Booleans can be objects if defined with the new keyword
+// - Strings can be objects if defined with the new keyword
+// - Date are objects
+// - Maths are objects
+// - Regulaf Expressions are objects
+// - Arrays are objects
+// - Functions are objects
+
+// PRIMITIVE VALUES
+// - do not have any properties or methods
+
+// 7 PRIMITIVE DATA TYPES
+// - Number
+// - Null
+// - String
+// - Symbol
+// - Boolean
+// - BigInt
+// - Undefined
+
+// PRIMTIVE VALUES ARE IMMUTABLE
+
+// OBJECTS
+// are variables that can hold many values
+// objects values are written as name:value pairs
+// A javascript object is a collection of named values
+// The named values are called properties
+// Methods are actions that can be performed on objects
+// Object properties can have primitive values, objects or functions
+// An object methods is an object property containing a function definition
+
+// WAYS TO CREATE AN OBJECT IN JAVASCRIPT
+// - using object literal
+// - using the new keyword
+// - using an Object Constructor
+// - using Object.create();
+
+// OBJECTS ARE MUTABLE
+
+// PROPERTIES
+// - a javascript object is a collection of unordered properties
+
+// FOR IN LOOP
+// loops over the properties of an object
+// const obj = {
 //     name: "chinu",
-//     age: 21,
-//     location: 'goa',
-//     "few hobbies": ['drawing','working out'],
+//     hobby: "sleeping",
+//     intro: function(){
+//         console.log(`Hi I am ${name}, my hobby is ${hobby}`);
+//     },
 // };
-// console.log(user1.name);
-// console.log(user1['name']);
-// console.log(user1['few hobbies']);
+// for(let a in obj)
+// {
+//     console.log(a);
+// };
+
+// DELETING PROPERTIES
+// delete objName.propName
+
+// OBJECT METHODS
+// const obj = {
+//     name: "chinu",
+//     hobby: "sleeping",
+//     intro: function(){
+//         console.log(`Hi I am ${name}, my hobby is ${hobby}`);
+//     },
+// };
+// console.log(obj.intro);
 
 // USING SYMBOLS INSIDE OBJECTS
 // const sym1 = Symbol('key1');
@@ -212,7 +272,7 @@
 // };
 // user1.intro();
 
-// ?
+// USING OPTIONAL CHAINING ?
 // const user1 = {
 //     obj1: {
 //         obj2:{
@@ -254,7 +314,6 @@
 // console.log(Object.values(obj1));
 // console.log(Object.entries(obj1));
 
-
 // hasOwnProperty() method
 // const obj1 = {
 //     name1: "chinu",
@@ -262,6 +321,91 @@
 // };
 // console.log(obj1.hasOwnProperty('name1'));
 // console.log(obj1.hasOwnProperty('name3'));
+
+// ----
+// SETS
+// ----
+
+// INTRO
+// is a collection of unique values
+// each value can only occur once in a set
+// a set can hold any value of any datatype
+
+// CREATING A SET
+// passing an array to new Set()
+// creating a new set and then adding values to it
+// creating a new set and then adding variables to it
+
+// USING NEW SET() METHOD and the ADD() METHOD
+// const newSet = new Set();
+// newSet.add(1);
+// newSet.add('a');
+// newSet.add(true);
+// newSet.add([1,2,3,4]);
+// newSet.add({name: 'chinu', hobby:'sleeping'});
+// newSet.add(new Date());
+// let b = 'value';
+// newSet.add(b)
+// console.log(newSet);
+
+// FOREACH() METHOD
+// const newSet = new Set();
+// newSet.add(1);
+// newSet.add('a');
+// newSet.add(true);
+// newSet.add([1,2,3,4]);
+// newSet.add({name: 'chinu', hobby:'sleeping'});
+// newSet.add(new Date());
+// newSet.forEach(function(value)
+// {
+//     console.log(value);
+// });
+
+// VALUES() METHOD
+// The values() method returns an Iterator object containing all the values in a Set:
+// const newSet = new Set();
+// newSet.add(1);
+// newSet.add('a');
+// newSet.add(true);
+// newSet.add([1,2,3,4]);
+// newSet.add({name: 'chinu', hobby:'sleeping'});
+// newSet.add(new Date());
+// console.log(newSet.values());
+
+// KEYS() METHOD
+// set doesn't have keys() method
+// keys() returns the same as values()
+// this makes sets compatible with maps
+// console.log(newSet.keys());
+
+// ENTRIES() METHOD
+// entries() return [value,value] pairs instead of [key,value] pairs
+// this makes sets compatible with maps
+// console.log(newSet.entries());
+
+// CHECKING IF AN OBJECT IS SET OR NOT
+// const newSet = new Set();
+// newSet.add(1);
+// newSet.add('a');
+// newSet.add(true);
+// newSet.add([1,2,3,4]);
+// newSet.add({name: 'chinu', hobby:'sleeping'});
+// newSet.add(new Date());
+// console.log(newSet instanceof Set)
+
+// ----
+// THIS
+// ----
+
+// this keyword refers to an object
+// which object this refers to depends on how this is being invoked
+// in an object method, this refers to the object
+// alone this refers to the global object
+// in a function this refers to the global object
+// in a function in strict mode this is undefined
+// in an event this refers to the element that received the element
+// methods like call(), apply() and bind() can refer this to any object
+// javascript strict mode doesn't allow default this binding
 
 // ---------------------
 // DESTRUCTURING OBJECTS
