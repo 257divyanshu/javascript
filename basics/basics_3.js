@@ -1,6 +1,111 @@
-// ---------
-// FUNCTIONS
-// ---------
+// -------------
+// 🟩 FUNCTIONS
+// -------------
+
+// INTRO
+// A JavaScript function is a block of code designed to perform a particular task.
+// Function parameters are listed inside the parentheses () in the function definition.
+// Function arguments are the values received by the function when it is invoked.
+// Inside the function, the arguments (the parameters) behave as local variables.
+
+// RETURN STATEMENT
+// When JavaScript reaches a return statement, the function will stop executing.
+
+// THE () OPERATOR
+// The () operator invokes (calls) the function:
+// Accessing a function without () returns the function and not the function result:
+
+// LOCAL VARIABLES
+// Variables declared within a JavaScript function, become LOCAL to the function.
+// Local variables can only be accessed from within the function
+// Local variables are created when a function starts, and deleted when the function is completed.
+
+// SEMICOLON
+// Since a function declaration is not an executable statement, it is not common to end it with a semicolon.
+
+// FUNCTION EXPRESSION
+// is a function definition sotred in a variable
+// function expressions should end with a semicolon
+
+// SELF INVOKING FUNCTIONS
+// (function sayHi(){console.log("Hi")})();
+
+// METHODS
+// A function defined as the property of an object, is called a method to the object.
+
+// CONSTRUCTOR
+// A function designed to create new objects, is called an object constructor.
+
+// PARAMETERS v/s ARGUMENTS
+// Function parameters are the names listed in the function definition.
+// Function arguments are the real values passed to (and received by) the function.
+
+// PARAMETER RULES
+// JavaScript function definitions do not specify data types for parameters.
+// JavaScript functions do not perform type checking on the passed arguments.
+// JavaScript functions do not check the number of arguments received.
+
+// DEFAULT ARGUMENTS
+// If a function is called with missing arguments (less than declared), the missing values are set to undefined.
+// we can set default parameter values also
+
+// FUNCTION REST PARAMETER
+// The rest parameter (...) allows a function to treat an indefinite number of arguments as an array:
+// function sum(...arr)
+// {
+//     let sum = 0;
+//     for(a of arr)
+//     {
+//         sum+=a;
+//     };
+//     return sum;
+// };
+// console.log(sum(1,2,3,));
+
+// ARGUMENTS OBJECT
+// The argument object contains an array of the arguments used when the function was called (invoked).
+// function sum(...arr)
+// {
+//     console.log(arguments);
+// };
+// sum(1,2,3);
+// If a function is called with too many arguments (more than declared), these arguments can be reached using the arguments object.
+
+// ARGUMENTS ARE PASSED BY VALUE
+// JavaScript arguments are passed by value: The function only gets to know the values, not the argument's locations.
+// If a function changes an argument's value, it does not change the parameter's original value.
+// Changes to arguments are not visible (reflected) outside the function.
+// let a = 0;
+// function change(a)
+// {
+//     console.log(`a is ${a}`);
+//     a = 3;
+//     console.log(`a is ${a}`);
+// };
+// console.log(`a is ${a}`);
+// change(2);
+// console.log(`a is ${a}`);
+
+// OBJECTS ARE PASSED BY REFERECE
+// In JavaScript, object references are values.
+// Because of this, objects will behave like they are passed by reference:
+// If a function changes an object property, it changes the original value.
+// Changes to object properties are visible (reflected) outside the function.
+// function change(obj)
+// {
+//     obj.name = "chinu";
+// };
+// let obj = {
+//     name: "divyanshu",
+//     age: 21,
+// };
+// console.log(obj);
+// change(obj);
+// console.log(obj);
+
+// THIS FOR FUNCTIONS
+// Invoking a function as a global object causes the value of this to be the global object
+// Invoking a function as an object method, causes the value of this to be the object itself
 
 // EXAMPLE 1
 // function sum1(num1,num2)
@@ -15,9 +120,9 @@
 // const result1 = sum1(2,3);
 // const result2 = sum2(2,3);
 // console.log("result1 is ",result1); // given us undefined because the function doesn't return anything
-// console.log("result2 is ",result2); // given us undefined because the function doesn't return anything
+// console.log("result2 is ",result2); // doesn't gives us undefined
 
-// EXAMPLE 2
+// EXAMPLE 
 // function logInNotification(userName)
 // {
 //     if(!userName)
@@ -32,34 +137,50 @@
 // };
 // console.log(logInNotification('chinu'));
 
-// EXAMPLE 3
-// using rest operator when number of arguments is not known
-// function makeArray(...arr)
-// {
-//     return arr;
-// };
-// console.log(makeArray(10,20,30));
+// ---------
+// 🟩 SCOPE
+// ---------
 
-// EXAMPLE 4
-// const user = {
-//     name: "chinu",
-//     age: 21,
-// };
-// function handleObject(obj)
-// {
-//     console.log(`I am ${obj.name}. I am ${obj.age} years old`);
-// };
-// handleObject(user);
-// handleObject({name: "gudiya", age:19});
+// INTRO
+// Scope determines the accessibility of variables, objects, and functions from different parts of the code.
 
-// -----
-// SCOPE
-// -----
+// TYPES OF SCOPE
+// 3 types of blocks: block scope, function scope, global scope
+// Before ES6 (2015), JavaScript variables had only Global Scope and Function Scope.
+// ES6 introduced two important new JavaScript keywords: let and const.
+// These two keywords provide Block Scope in JavaScript.
+// Variables declared inside a { } using let or const block cannot be accessed from outside the block:
+// Variables declared with the var keyword can NOT have block scope.
 
-// let a = 10;
-// var b = 20;
-// const c = 30;
-// console.table([a,b,c]);
+// FUNCTION SCOPE
+// Local variables have Function Scope
+// They can only be accessed from within the function.
+// Local variables are created when a function starts, and deleted when the function is completed.
+// Each function creates a new scope.
+// Variables declared with var, let and const are quite similar when declared inside a function. They all have function scope
+
+// GLOBAL SCOPE
+// A variable declared outside a function, becomes GLOBAL.
+// A global variable has Global Scope:
+// All scripts and functions on a web page can access it. 
+
+// AUTOMATICALLY GLOBAL
+// If you assign a value to a variable that has not been declared, it will automatically become a GLOBAL variable.
+
+// STRICT MODE
+// All modern browsers support running JavaScript in "Strict Mode".
+
+// VARIABLES THAT BELONG TO THE GLOBAL OBJECT
+// variables declared with the var keyword belong to the global object
+// variables declared with the const or let keyword do not belong to the global object
+
+// LIFETIME OF VARIABLES
+// The lifetime of a JavaScript variable starts when it is declared.
+// Function (local) variables are deleted when the function is completed.
+// In a web browser, global variables are deleted when you close the browser window (or tab).
+
+// SCOPE OF FUNCTION ARGUMENTS
+// Function arguments (parameters) work as local variables inside functions.
 
 // EXAMPLE 1
 // if(true)
@@ -103,9 +224,9 @@
 // };
 // one();
 
-// --------------------
+// ---------------------------------
 // FUNCTION EXPRESSIONS AND HOISTING
-// --------------------
+// ---------------------------------
 
 // console.log(sum1(2,3));
 // function sum1(a,b)
@@ -119,9 +240,9 @@
 //     console.log(a+b);
 // };
 
-// ------------
-// THIS KEYWORD
-// ------------
+// ----------------
+// 🟩 THIS KEYWORD
+// ----------------
 
 // const user = {
 //     userName: "chinu",
@@ -156,24 +277,27 @@
 // };
 // one();
 
-// ---------------
-// ARROW FUNCTIONS
-// ---------------
+// -------------------
+// 🟩 ARROW FUNCTIONS
+// -------------------
 
+// INTRO
+// Arrow functions were introduced in ES6.
+// Arrow functions allow us to write shorter function syntax:
+
+// THIS 
+// arrow functions there are no binding of this.
+// In regular functions the this keyword represented the object that called the function, which could be the window, the document, a button or whatever.
+
+// EXAMPLE 
 // const one = ()=>{
 //     let a = 20;
 //     console.log(this.a); // undefined
 // }
 // one();
 
-// const sum = (a,b) => {
-//     return a+b;
-// };
-// const sum = (a,b) => a+b;
-// const sum = (a,b) => (a+b);
-// console.log(sum(1,2));
-// const mult = a => 2*a;
-// console.log(mult(2));
+// SUITABILITY FOR OBJECT METHODS
+// Arrow functions do not have their own this. They are not well suited for defining object methods.
 
 // ----
 // IIFE
@@ -266,11 +390,13 @@
 // CONTROL FLOW
 // ------------
 
+// TERNARY OPERATOR
 // let balance = 1000000;
 // if(balance > 500) console.log("buy it");
 
-// is used in conditional rendering
+// constrol flow statements are used in conditional rendering
 
+// SWITCH CASE
 // let price = 200;
 // switch (price) {
 //     case 100:
@@ -355,6 +481,27 @@
 // // console.log(balance>10 ? "greater than 10":"not greater than 10");
 // balance>10? console.log("greater than 10") : console.log("not greater than 10");
 
+// COMMON CODE BLOCKS FOR SWITCH CASE STATEMENTS
+// switch (new Date().getDay()) {
+//     case 4:
+//     case 5:
+//       text = "Soon it is Weekend";
+//       break;
+//     case 0:
+//     case 6:
+//       text = "It is Weekend";
+//       break;
+//     default:
+//       text = "Looking forward to the Weekend";
+//   }
+//   console.log(text);
+
+// SWITCHING DETAILS
+// If multiple cases matches a case value, the first case is selected.
+// If no matching cases are found, the program continues to the default label.
+// If no default label is found, the program continues to the statement(s) after the switch.
+// switch case statements use strict comparison
+
 // -----
 // LOOPS
 // -----
@@ -404,9 +551,9 @@
 // in case of arrays keys are indices
 // in case of arrays values are elements of the array
 
-// ----
-// MAPS
-// ----
+// --------
+// 🟩 MAPS
+// --------
 // A Map holds key-value pairs where the keys can be any datatype.
 // A Map remembers the original insertion order of the keys.
 
@@ -523,43 +670,3 @@
 // forEach works on sets, for of works on sets, for in does't work on sets
 // for of works on maps, for in doesn't work on maps
 // for in works on objects, for of doesn't work on objects
-
-// ----------------------
-// HIGHER ORDER FUNCTIONS
-// ----------------------
-
-// forEach() function is a higher order function because it takes another function as an argument
-
-// ----------------
-// FOREACH() METHOD
-// ----------------
-
-// const arr = ['a','b','c','d','e'];
-// const val = arr.forEach(function(elem){
-//     console.log(elem);
-// });
-// console.log(val); 
-// forEeach() doesn't return anything
-
-// -----------------
-// MAP FILTER REDUCE
-// -----------------
-
-// FILTER
-// const arr = ['a','b','c','d','e'];
-// const filteredArr = arr.filter(elem => elem>'c');
-// console.log(filteredArr);
-// we can mimic it using forEach() method
-
-// MAP 
-
-// REDUCE
-// const arr = [1,2,3,4,5];
-// let init = 10;
-// // const sum = arr.reduce((acc,curr)=>acc+=curr,init)
-// const sum = arr.reduce(function(acc,curr){
-//     return acc+=curr
-// },init);
-// console.log(sum);
-
-// we can chain map fiter and reduce

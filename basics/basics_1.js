@@ -1,6 +1,6 @@
-// ---------------------
-// VAR V/S LET V/S CONST
-// ---------------------
+// -------------------------
+// 🟩 VAR V/S LET V/S CONST
+// -------------------------
 
 // The let and const keywords were added to JavaScript in 2015.
 // The var keyword should only be used in code written for older browsers.
@@ -29,9 +29,9 @@
 // won't throw any error
 // but it's a bad practice
 
-// -------------
-// CONSOLE.TABLE
-// -------------
+// -----------------
+// 🟩 CONSOLE.TABLE
+// -----------------
 
 // The table() method writes a table to the console.
 
@@ -56,9 +56,9 @@
 
 // if we pass an array of objects to the console.table then the index of objects in the array will be the index of the table and the key names of those object will become the name of columns 
 
-// ------------------------
-// UNINITIZALIZED VARIABLES
-// ------------------------
+// ----------------------------
+// 🟩 UNINITIZALIZED VARIABLES
+// ----------------------------
 
 // The undefined keyword indicates that a variable has not been assigned a value
 
@@ -66,9 +66,9 @@
 // console.log(a);
 // a is assigned undfined
 
-// ---------
-// DATATYPES
-// ---------
+// -------------
+// 🟩 DATATYPES
+// -------------
 
 // "use strict"; // treat all JS code as newer version
 
@@ -102,9 +102,9 @@
 // console.log(typeof undefined); // gives undefined
 // console.log(typeof null); // gives object
 
-// -------------------
-// DATATYPE CONVERSION
-// -------------------
+// -----------------------
+// 🟩 DATATYPE CONVERSION
+// -----------------------
 
 // STRINGS TO NUMBERS
 // Number() method for converting a value to a number
@@ -215,9 +215,9 @@
 //                 Boolean("")]
 //             );
 
-// ---------
-// OPERATORS
-// ---------
+// -------------
+// 🟩 OPERATORS
+// -------------
 
 // TYPES OF OPERATORS
 // Arithmetic Operators
@@ -292,9 +292,9 @@
 // console.log(+true);
 // console.log(+"");
 
-// --------------------
-// COMPARISON OPERATORS
-// --------------------
+// ------------------------
+// 🟩 COMPARISON OPERATORS
+// ------------------------
 
 // console.log("2">1);
 // console.log("02">1);
@@ -311,9 +311,9 @@
 
 // === is strict comparison (compares datatype also)
 
-// ---------
-// DATATYPES
-// ---------
+// -------------
+// 🟩 DATATYPES
+// -------------
 
 // null
 // number
@@ -386,9 +386,9 @@
 // console.log(obj2);
 // obj1 is passed by reference
 
-// -------
-// STRINGS
-// -------
+// -----------
+// 🟩 STRINGS
+// -----------
 
 // STRING INTERPOLATION USING TEMPLATE LITERALS
 // let name = "chinu";
@@ -503,9 +503,9 @@
 // let text = "The rain in SPAIN stays mainly in the plain";
 // console.log(text.match("ain"));
 
-// ------
-// NUMBER
-// ------
+// ----------
+// 🟩 NUMBER
+// ----------
 
 // Integers (numbers without a period or exponent notation) are accurate up to 15 digits.
 // The maximum number of decimals is 17.
@@ -558,9 +558,9 @@
 // console.log(salary.toLocaleString());
 // console.log(salary.toLocaleString('en-IN'));
 
-// -----------
-// MATH OBJECT
-// -----------
+// ---------------
+// 🟩 MATH OBJECT
+// ---------------
 
 // Unlike other objects, the Math object has no constructor.
 // The Math object is static.
@@ -609,9 +609,9 @@
 // arr.sort();
 // console.log(arr);
 
-// -----------
-// DATE OBJECT
-// -----------
+// ---------------
+// 🟩 DATE OBJECT
+// ---------------
 
 // Date objects are static. The "clock" is not "running".
 // The computer clock is ticking, date objects are not.
@@ -689,3 +689,6 @@
 // console.log(date);
 // console.log(date.getTime());
 // console.log(date.getTime()/1000);
+
+// REMAINING
+// STACK AND HEAP

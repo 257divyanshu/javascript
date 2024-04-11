@@ -2,9 +2,9 @@
 // [] are brackets
 // {} are braces
 
-// ------
-// ARRAYS
-// ------
+// ----------
+// 🟩 ARRAYS
+// ----------
 
 // WAYS TO CREATE ARRAYS
 // using literals
@@ -95,7 +95,6 @@
 // const arr2 = arr1.splice(0,3); // using splice to remove elements
 // console.log(arr1);
 
-
 // METHODS FOR SEARCHING IN ARRAYS
 // indexOf() method (can take two arguments also) (first argument is the item we are searching for and the second argument will be the index from where we will be starting our search) (returns -1 if it's not found)
 // lastIndexOf() method (returns the position of the last occurence of the specified element) (it can also take two arguments similar to the indexOf() method)
@@ -160,9 +159,89 @@
 // let score3 = 300;
 // console.log(Array.of(score1,score2,score3));
 
-// -------
-// OBJECTS
-// -------
+// ARRAY ITERATION METHODS
+// Array forEach
+// Array map()
+// Array flatMap()
+// Array filter()
+// Array reduce()
+// Array reduceRight()
+// Array every()
+// Array some()
+// Array from()
+// Array keys()
+// Array entries()
+// Array with()
+
+// MAP
+// The map() method creates a new array by performing a function on each array element.
+// The map() method does not change the original array.
+// const numbers1 = [45, 4, 9, 16, 25];
+// const numbers2 = numbers1.map(myFunction);
+// function myFunction(value, index, array) {
+//   return value * 2;
+// }
+// console.log(numbers2);
+
+// FILTER() METHOD
+// The filter() method creates a new array with array elements that pass a test.
+// const numbers = [45, 4, 9, 16, 25];
+// const over18 = numbers.filter(myFunction);
+// function myFunction(value, index, array) {
+//   return value > 18;
+// };
+// console.log(over18);
+
+// REDUCE() METHOD
+// The reduce() method runs a function on each array element to produce (reduce it to) a single value.
+// The reduce() method does not reduce the original array.
+// The reduce() method can accept an initial value:
+// Similarly we have The reduceRight() method runs a function on each array element to produce (reduce it to) a single value.
+// const numbers = [45, 4, 9, 16, 25];
+// let sum = numbers.reduce(myFunction);
+// function myFunction(total, value, index, array) {
+//   return total + value;
+// }
+// console.log(sum);
+
+// EVERY() METHOD
+// const numbers = [45, 4, 9, 16, 25];
+// let allOver18 = numbers.every(myFunction);
+// function myFunction(value, index, array) {
+//   return value > 18;
+// }
+// console.log(allOver18);
+
+// SOME() METHOD
+// The some() method checks if some array values pass a test.
+// const numbers = [45, 4, 9, 16, 25];
+// let someOver18 = numbers.some(myFunction);
+// function myFunction(value, index, array) {
+//   return value > 18;
+// }
+// console.log(someOver18);
+
+// WITH() METHOD
+// a safe way to update elements in an array without altering the original array.
+// const months = ["Januar", "Februar", "Mar", "April"];
+// const myMonths = months.with(2, "March");
+// console.log(months);
+// console.log(myMonths);
+
+// FOREACH() METHOD
+// forEach() function is a higher order function because it takes another function as an argument
+// const arr = ['a','b','c','d','e'];
+// const val = arr.forEach(function(elem){
+//     console.log(elem);
+// });
+// console.log(val); 
+// forEeach() doesn't return anything
+
+// we can chain map fiter and reduce
+
+// -----------
+// 🟩 OBJECTS
+// -----------
 
 // EVERYTHING IS AN OBJECT IN JAVASCRIPT
 // - Numbers can be objects if defined with the new keyword
@@ -322,9 +401,9 @@
 // console.log(obj1.hasOwnProperty('name1'));
 // console.log(obj1.hasOwnProperty('name3'));
 
-// ----
-// SETS
-// ----
+// -------
+// 🟩 SETS
+// -------
 
 // INTRO
 // is a collection of unique values
@@ -393,9 +472,9 @@
 // newSet.add(new Date());
 // console.log(newSet instanceof Set)
 
-// ----
-// THIS
-// ----
+// --------
+// 🟩 THIS
+// --------
 
 // this keyword refers to an object
 // which object this refers to depends on how this is being invoked
@@ -407,9 +486,9 @@
 // methods like call(), apply() and bind() can refer this to any object
 // javascript strict mode doesn't allow default this binding
 
-// ---------------------
-// DESTRUCTURING OBJECTS
-// ---------------------
+// -------------------------
+// 🟩 DESTRUCTURING OBJECTS
+// -------------------------
 
 // const course = {
 //     name: "JS in hinid",
@@ -425,9 +504,85 @@
 // // console.log(price);
 // // console.log(instructor);
 
+// EXAMPLE 2
+// const vehicleOne = {
+//     brand: 'Ford',
+//     model: 'Mustang',
+//     type: 'car',
+//     year: 2021, 
+//     color: 'red'
+//   }
+//   myVehicle(vehicleOne);
+//   function myVehicle({type, color, brand, model}) {
+//     const message = 'My ' + type + ' is a ' + color + ' ' + brand + ' ' + model + '.';
+//     console.log(message);
+//   }
+// the object properties do not have to be declared in a specific order.
+
+// EXAMPLE 3 (destructuring deeply nested object's properties)
+// const vehicleOne = {
+//     brand: 'Ford',
+//     model: 'Mustang',
+//     type: 'car',
+//     year: 2021, 
+//     color: 'red',
+//     registration: {
+//       city: 'Houston',
+//       state: 'Texas',
+//       country: 'USA'
+//     }
+// };
+// myVehicle(vehicleOne)
+// function myVehicle({ model, registration: { state , city, country } }) {
+//     const message = 'My ' + model + ' is registered in ' + city + ', ' + state + ', ' + country;
+//     console.log(message);
+// };
+
+// ------------------------
+// 🟩 DESTRUCTURING ARRAYS
+// ------------------------
+
+// EXAMPLE 1
+// const vehicles = ['mustang', 'f-150', 'expedition'];
+// const [car, , suv] = vehicles;
+// console.log(car);
+// console.log(truck);
+// console.log(suv);
+
+// Destructuring comes in handy when a function returns an array:
+
 // --------
 // JSON API
 // --------
+
+// INTRO
+// JSON stands for JavaScript Object Notation
+// JSON is a format for storing and transporting data.
+// JSON is a lightweight data interchange format
+// JSON is often used when data is sent from a server to a web page.
+// JSON is language independent *
+// JSON is "self-describing" and easy to understand
+// The JSON syntax is derived from JavaScript object notation syntax, but the JSON format is text only. Code for reading and generating JSON data can be written in any programming language.
+// The JSON format is syntactically identical to the code for creating JavaScript objects.
+// Because of this similarity, a JavaScript program can easily convert JSON data into native JavaScript objects.
+
+// SYNTAX RULES
+// Data is in name/value pairs
+// Data is separated by commas
+// Curly braces hold objects
+// Square brackets hold arrays
+
+// NOTE
+// JSON names require double quotes. JavaScript names do not.
+
+// JSON.PARSE() METHOD
+// JSON names require double quotes. JavaScript names do not.
+// let text = '{ "employees" : [' +
+// '{ "firstName":"John" , "lastName":"Doe" },' +
+// '{ "firstName":"Anna" , "lastName":"Smith" },' +
+// '{ "firstName":"Peter" , "lastName":"Jones" } ]}';
+// const obj = JSON.parse(text);
+// console.log(obj);
 
 // earlier response from the backend used to come in XML, nowadays it comes in JSON structure
 
