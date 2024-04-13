@@ -469,12 +469,25 @@
 // };
 
 // NULLISH COLAESCING OPERATOR ?? : NULL and UNDEFINED
+// the ?? operator returns the first argument if it is not nullish (null or undefined)
 // let val1;
+// let name = null;
+// let text = "missing";
+// val1 = name ?? text;
 // val1 = 5 ?? 10; // gives 5
 // val1 = null ?? 10; // gives 10
 // val1 = undefined ?? 20; // gives 20
 // val1 = null ?? 1 ?? 20; // gives 1
 // console.log(val1);
+
+// OPTIONAL CHAINING OPERATOR
+// The ?. operator returns undefined if an object is undefined or null (instead of throwing an error)
+// const car = {type:"Fiat", model:"500", color:"white"};
+// console.log(car?.type) 
+// console.log(car?.engine?.model) // this won't thrown any error
+// console.log(car.engine.model) // this will throw an error
+
+
 
 // TERNARY OPERATOR
 // let balance = 1;

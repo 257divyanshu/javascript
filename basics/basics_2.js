@@ -551,9 +551,9 @@
 
 // Destructuring comes in handy when a function returns an array:
 
-// --------
-// JSON API
-// --------
+// ------------
+// 🟩 JSON API
+// ------------
 
 // INTRO
 // JSON stands for JavaScript Object Notation
