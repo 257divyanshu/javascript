@@ -4,7 +4,7 @@ function one(naam){
 }
 function two(naam,umar)
 {
-    // one(naam); first step doesn't work because this.name is set to naam for the one not for the two
+    // one(naam); //first step doesn't work because this.name is set to naam for the function one not for the function two
     // one.call(naam); // second step to doesn't work because we haven't set the reference
     one.call(this,naam); // this works because now we have specified that the reference is of this object
     this.age = umar;
