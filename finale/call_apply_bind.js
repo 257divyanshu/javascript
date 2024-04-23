@@ -15,7 +15,7 @@
 // function second(naam,umar)
 // {
 
-//     // the following two line do the work
+//     // the following two lines do the work
 //     // this.name = naam;
 //     // this.age = umar;
 
@@ -71,12 +71,13 @@
 // const person = {
 //     firstName: "John",
 //     lastName: "Doe",
-//     display: function () {
+//     display: function (country) {
 //         let x = document.getElementById("demo");
-//         x.innerHTML = this.firstName + " " + this.lastName;
+//         x.innerHTML = this.firstName + " " + this.lastName + " from " + country;
 //     }
 // }
-// setTimeout(person.display, 3000);
+// let newFunc = person.display.bind(person,"America");
+// setTimeout(newFunc, 3000);
 // this displays undefined undefined
 // because when a function is used as a callback, this is lost
 // but bind() method can solve this problem
@@ -94,10 +95,13 @@
 // INTERVIEW PREP
 
 // call method
-// is a built in method that is used to invoke a function with a specified this context and arguments provided iniviually 
+// is a built in method that is used to invoke a function with a specified this context and arguments provided inividually 
 // used for borrowing functions from one object to another
 // used for invoking functions with a specific context
 // passing arguments dynamically
 
 // apply method works similar to call method
 // the only difference is that the apply method takes an array of arguments instead of taking those arguments one by one
+
+// bind() method
+// the bind() method is also an in-built function that creates a new function with a specified this context. It is like locking the context for a function so the whenever the function is called it uses that particular context only. In addition to this we can also set initial arguments for the function if needed.

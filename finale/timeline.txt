@@ -1,3 +1,2 @@
-22 April : call and apply methods
-up next : bind method
-          polyfills
+22 April : call apply and bind methods
+23 April : call apply and bind polyfills
