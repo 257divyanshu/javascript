@@ -1,5 +1,5 @@
 // CURRYING
-// is a concept in javascript where in functions with multiple arguments are transformed into a sequence of functions, each taking lesser number of arguments single argument
+// is a concept in javascript where in functions with multiple arguments are transformed into a sequence of functions, each taking lesser number of arguments
 
 
 // EXAMPLE 1
@@ -34,20 +34,20 @@
 
 // EXAMPLE 2
 // CHATGPT EXAMPLE
-// function multiply(a,b,c)
-// {
-//     return a*b*c;
-// };
-// function curriedMultiple(a)
-// {
-//     return function(b)
-//     {
-//         return function(c)
-//         {
-//             return a*b*c;
-//         };
-//     };
-// };
+function multiply(a,b,c)
+{
+    return a*b*c;
+};
+function curriedMultiple(a)
+{
+    return function(b)
+    {
+        return function(c)
+        {
+            return a*b*c;
+        };
+    };
+};
 // console.log(curriedMultiple(2)(3)(4));
 
 // PRACTICAL USE CASES
@@ -90,11 +90,26 @@
 //     console.log(element);
 //     console.log(`${callback.name} will be called when ${element.tagName} with ${`${element.id ? `id ${element.id}` : `class ${element.className}`}`} is ${event}ed`);
 // };
-// // let targetElement = document.getElementById("runBtn"); // if we target element with id
+let addEvent = function(element){
+    return function(event)
+    {
+        return function(callback)
+        {
+            element.addEventListener(event,callback);
+        };
+    };
+};
+let targetElement1 = document.getElementById("runBtn1"); // if we target element with id
+let targetElement2 = document.getElementById("runBtn2"); // if we target element with id
+let targetElement3 = document.getElementById("runBtn3"); // if we target element with id
 // let targetElement = document.getElementsByClassName("btns")[0]; // if we target element with className
 // targetElement.removeAttribute('id');
 // let eventName = "click";
-// let onClickCall = function(e){
-//     console.log('clicked');
-// };
-// addEvent(targetElement)(eventName)(onClickCall);
+let onClickCall = function(e){
+    console.log('clicked');
+};
+let onMouseOverCall = function(e){
+    console.log('mouseovered');
+};
+addEvent(targetElement1)('click')(onClickCall);
+addEvent(targetElement2)('mouseover')(onMouseOverCall);
